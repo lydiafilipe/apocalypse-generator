@@ -1,6 +1,8 @@
 public class Police extends Person {
 
+    //Police are always just police
+
     public Police() {
-        super();
+        super(Main.police, null);
     }
 }

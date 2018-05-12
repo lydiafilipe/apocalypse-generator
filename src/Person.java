@@ -1,9 +1,13 @@
 public class Person extends Term {
 
-    private String verb;
+    public PersonType type;
+    public PersonFeature[] features;
 
-    public Person(){
+    public Person(PersonType type, PersonFeature[] features)
+    {
         super();
+        this.type = type;
+        this.features = features;
     }
 
 }
