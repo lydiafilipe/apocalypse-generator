@@ -19,11 +19,11 @@ public class Meteor extends Apocalypse
                                             new StateOfVictim("was a pile of ashes")};
         VictimAftermath[] victimAftermaths = {  new VictimAftermath("could not be removed from the pavement"),
                                                 new VictimAftermath("was blown away by the wind")};
-        SuspectAftermath[] suspectAftermaths = {    new SuspectAftermath("had itself disintegrated"),
+        SuspectAftermath[] suspectAftermaths = {    new SuspectAftermath("disintegrated"),
                                                     new SuspectAftermath("was still smoldering")};
-        Advice[] advices = { new Advice("Make sure to have your confessor on speed-dial."),
-                            new Advice("In the event of a meteor strike, there is not much you can do."),
-                            new Advice("Try hiding under a table."),
+        Advice[] advices = { new Advice("Make sure to have your confessor on speed-dial"),
+                            new Advice("In the event of a meteor strike, there is not much you can do"),
+                            new Advice("Try hiding under a table"),
                             };
 
         super.name = name;
@@ -45,17 +45,18 @@ public class Meteor extends Apocalypse
         if (suspectType.equals(suspectTypes[0]))
         {
             PersonFeature[] sf1 = {super.suspectFeatures[0]};
-            PersonFeature[] sf2 = null;
+            PersonFeature[] sf2 = {null};
             suspectFeatures = Main.randomInt(0, 1) == 1 ? sf1 : sf2;
         }
         else if (suspectType.equals(suspectTypes[1]))
         {
             PersonFeature[] sf1 = {super.suspectFeatures[1]};
-            PersonFeature[] sf2 = null;
+            PersonFeature[] sf2 = {null};
             suspectFeatures = Main.randomInt(0, 1) == 1 ? sf1 : sf2;
         }
         else {
-            suspectFeatures = null;
+            PersonFeature[] sf = {null};
+            suspectFeatures = sf;
         }
         return new Suspect(suspectType, suspectFeatures);
     }

@@ -10,9 +10,13 @@ public class Crime extends Term {
     VictimAftermath victimAftermath;
     SuspectAftermath suspectAftermath;
 
+    public boolean ready = false;
+
     public Crime(Apocalypse apocalypse) {
         super();
         this.apocalypse = apocalypse;
+        generateCrimeFromApocalypse();
+        ready = true;
     }
 
     public void generateCrimeFromApocalypse(){
