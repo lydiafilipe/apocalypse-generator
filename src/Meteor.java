@@ -66,18 +66,22 @@ public class Meteor extends Apocalypse
     }
     public StateOfVictim randomStateOfVictim(ActionCommitted actionCommitted)
     {
-        return null;
+        int stateOfVictimIndex = Main.randomInt(0, statesOfVictims.length);
+        return statesOfVictims[stateOfVictimIndex];
     }
     public PoliceRespondTo randomPoliceRespondTo(ActionCommitted actionCommitted)
     {
-        return  null;
-    } //ActionCommitted.action
+        int policeRespondToIndex = Main.randomInt(0, policeRespondTos.length);
+        return new PoliceRespondTo(policeRespondTos[policeRespondToIndex], PoliceRespondTo.pickRandomSpeed());
+    }
     public VictimAftermath randomVictimAftermath(ActionCommitted actionCommitted, StateOfVictim stateOfVictim, PoliceRespondTo policeRespondTo)
     {
-        return null;
-    } //StateOfVictim.state
+        int victimAftermathIndex = Main.randomInt(0, victimAftermaths.length);
+        return victimAftermaths[victimAftermathIndex];
+    }
     public SuspectAftermath randomSuspectAftermath(ActionCommitted actionCommitted, PoliceRespondTo policeRespondTo)
     {
-        return null;
-    }//ActionCommitted.action
+        int suspectAftermathIndex = Main.randomInt(0, suspectAftermaths.length);
+        return suspectAftermaths[suspectAftermathIndex];
+    }
 }
