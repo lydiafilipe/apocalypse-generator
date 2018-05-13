@@ -1,17 +1,17 @@
 public abstract class Apocalypse {
 
-    private String name;
-    private PersonType[] suspectTypes;
-    private PersonFeature[] suspectFeatures;
-    private ActionCommitted[] actionsCommitted;
-    private PoliceRespondTo[] policeRespondTos;
-    private StateOfVictim[] statesOfVictims;
-    private VictimAftermath[] victimAftermaths;
-    private SuspectAftermath[] suspectAftermaths;
-    private Advice[] advices;
+    protected String name;
+    protected PersonType[] suspectTypes;
+    protected PersonFeature[] suspectFeatures;
+    protected ActionCommitted[] actionsCommitted;
+    protected String[] policeRespondTos;
+    protected StateOfVictim[] statesOfVictims;
+    protected VictimAftermath[] victimAftermaths;
+    protected SuspectAftermath[] suspectAftermaths;
+    protected Advice[] advices;
 
     public Apocalypse(String name, PersonType[] suspectTypes, PersonFeature[] suspectFeatures,
-                      ActionCommitted[] actionsCommitted, PoliceRespondTo[] policeRespondTos,
+                      ActionCommitted[] actionsCommitted, String[] policeRespondTos,
                       StateOfVictim[] statesOfVictims, VictimAftermath[] victimAftermaths,
                       SuspectAftermath[] suspectAftermaths, Advice[] advices)
     {
