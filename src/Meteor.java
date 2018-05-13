@@ -46,13 +46,13 @@ public class Meteor extends Apocalypse
         {
             PersonFeature[] sf1 = {super.suspectFeatures[0]};
             PersonFeature[] sf2 = {null};
-            suspectFeatures = Main.randomInt(0, 1) == 1 ? sf1 : sf2;
+            suspectFeatures = Main.randomInt(0, 2) == 1 ? sf1 : sf2;
         }
         else if (suspectType.equals(suspectTypes[1]))
         {
             PersonFeature[] sf1 = {super.suspectFeatures[1]};
             PersonFeature[] sf2 = {null};
-            suspectFeatures = Main.randomInt(0, 1) == 1 ? sf1 : sf2;
+            suspectFeatures = Main.randomInt(0, 2) == 1 ? sf1 : sf2;
         }
         else {
             PersonFeature[] sf = {null};

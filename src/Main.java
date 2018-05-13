@@ -53,7 +53,7 @@ public class Main {
     public static String generateAdvice(Apocalypse apocalypse)
     {
         String advice = "";
-        int adviceCount = randomInt(0, 4);
+        int adviceCount = randomInt(1, 4);
         int[] picks = {-1, -1, -1};
         adviceCount = adviceCount > apocalypse.advices.length ? apocalypse.advices.length : adviceCount;
         for (int i = 0; i < adviceCount; i++)
@@ -62,6 +62,7 @@ public class Main {
             do {
                 pick = randomInt(0, apocalypse.advices.length);
             } while (pick == picks[0] || pick == picks[1] || pick == picks[2]);
+            picks[i] = pick;
             advice = advice + apocalypse.advices[pick].advice + ". ";
         }
         return advice;
@@ -85,10 +86,10 @@ public class Main {
         alert = alert + "At approximately " + time.hour + ":" + time.minute + " " + time.ampm + ", " + date.weekday + ", " + date.month + " " + date.day + ", " + date.year + " -- ";
         if (crime.policeRespondTo.speed == PoliceRespondTo.Speed.VERYSLOW)
         {
-            alert = alert + " " + describedVictim + " ";
-            alert = alert + " walking on the sidewalk at approximately " + location.number + " " + location.street + " ";
-            alert = alert + " encountered a " + describedSuspect;
-            alert = alert + (randomInt(0, 2) == 1 ? ". The " + crime.suspect.type + " " : " who ");
+            alert = alert + describedVictim + " ";
+            alert = alert + "walking on the sidewalk at approximately " + location.number + " " + location.street + " ";
+            alert = alert + "encountered a " + describedSuspect;
+            alert = alert + (randomInt(0, 2) == 1 ? ". The " + crime.suspect.type.type + " " : " that ");
             alert = alert + crime.actionCommitted.action + " the victim and then ";
             alert = alert + crime.suspectAftermath.aftermath + ". ";
             alert = alert + "The victim " + crime.stateOfVictim.state + " and " + crime.victimAftermath.aftermath + ". ";
@@ -97,11 +98,11 @@ public class Main {
         {
             alert = alert + "Chicago Police and UCPD officers responded to calls of ";
             alert = alert + crime.policeRespondTo.respondTo + " at " + location.number + " " + location.street + ". ";
-            alert = alert + "Upon arrival, officers ";
+            alert = alert + "Upon arrival, officers";
             if (crime.policeRespondTo.speed == PoliceRespondTo.Speed.FAST) {
                 alert = alert + " encountered a " + describedSuspect + " that " + crime.actionCommitted.action + " " + describedVictim + ". ";
-                alert = alert + " The suspect " + crime.suspectAftermath.aftermath + ". ";
-                alert = alert + " The victim " + crime.stateOfVictim.state + " and " + crime.victimAftermath.aftermath + ". ";
+                alert = alert + "The suspect " + crime.suspectAftermath.aftermath + ". ";
+                alert = alert + "The victim " + crime.stateOfVictim.state + " and " + crime.victimAftermath.aftermath + ". ";
             }
             else {
                 alert = alert + (randomInt(0, 2) == 1 ? " found " : " discovered ") + describedVictim;
@@ -109,7 +110,7 @@ public class Main {
                 alert = alert + "The victim " + crime.victimAftermath.aftermath + ". ";
             }
         }
-        alert = alert + "\n" + advice;
+        alert = alert + "\n" + advice + "\n";
         alert = alert + "Eric M. Heath\n";
         alert = alert + "Associate Vice President for Safety & Security\n";
         alert = alert + "* If you have any information related to this incident or if you witness any suspicious activity, please report it immediately to the Chicago Police Department (911) or the University of Chicago Police Department -- 123 from a University phone or 773.702.8181 from other phones.\n";
@@ -124,7 +125,30 @@ public class Main {
 
     public static void main(String args[])
     {
-        System.out.println(generateRandomAlert(new Meteor()));
+        int apocalypsePick = randomInt(0, 6);
+        Apocalypse apocalypse = null;
+        switch (apocalypsePick)
+        {
+            case 0:
+                apocalypse = new Meteor();
+                break;
+            case 1:
+                apocalypse = new Zombie();
+                break;
+            case 2:
+                apocalypse = new Pandemic();
+                break;
+            case 3:
+                apocalypse = new AI();
+                break;
+            case 4:
+                apocalypse = new NuclearWar();
+                break;
+            case 5:
+                apocalypse = new Flood();
+                break;
+        }
+        System.out.println(generateRandomAlert(apocalypse));
     }
 
 }

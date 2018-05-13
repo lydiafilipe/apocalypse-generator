@@ -14,11 +14,11 @@ public class AI extends Apocalypse {
                 new PersonFeature("that was a little too smart", PersonFeature.FeatureType.ADJ_SUF),
                 new PersonFeature("hiding under the bed", PersonFeature.FeatureType.ADJ_SUF)};
         ActionCommitted[] actionsCommitted = {new ActionCommitted("stole money from victim's bank account", ActionCommitted.Injury.MINOR),
-                new ActionCommitted("staged a coup", ActionCommitted.Injury.MINOR),
-                new ActionCommitted("denied service", ActionCommitted.Injury.NONE)};
+                new ActionCommitted("staged a coup against", ActionCommitted.Injury.MINOR),
+                new ActionCommitted("denied service to", ActionCommitted.Injury.NONE)};
         String[] policeRespondTos = {"really loud swearing", "crying", "yelling"};
         StateOfVictim[] statesOfVictims = {new StateOfVictim("was angry"),
-                new StateOfVictim("was at loss because they were incapable of doing anything theselves"),
+                new StateOfVictim("was at loss because they were incapable of doing anything themselves"),
                 new StateOfVictim("was yelling at their device"),
                 new StateOfVictim("was curled up in a ball in a corner of their apartment")};
         VictimAftermath[] victimAftermaths = {new VictimAftermath("replaced their device"),
@@ -28,7 +28,7 @@ public class AI extends Apocalypse {
                 new SuspectAftermath("taken over the house and built an army with other smart devices"),
                 new SuspectAftermath("attacked police by seducing their smart guns")};
         Advice[] advice = {new Advice("Don't trust your computer"), new Advice("You should make an effort to do things yourself"),
-                new Advice("You're devices can outsmart you")};
+                new Advice("Your devices can outsmart you")};
 
         super.name = name;
         super.suspectTypes = suspectTypes;

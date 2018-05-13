@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="apocalypse-generator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/apocalypse_generator_jar</output-path>
+    <root id="archive" name="apocalypse-generator.jar">
+      <element id="module-output" name="apocalypse-generator" />
+    </root>
+  </artifact>
+</component>

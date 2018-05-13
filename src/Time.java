@@ -28,8 +28,11 @@ public class Time extends Term {
     {
         if (hour == 0)
             hour = Main.randomInt(0, 12) + 1;
-        if (minute == 0)
+        if (minute == 0) {
             minute = (Main.randomInt(0, 12) + 1) * 5;
+            if (minute == 5 || minute == 60)
+                minute = 0;
+        }
         if (ampm == null)
             ampm = Main.randomInt(0, 2) == 1 ? "p.m." : "a.m.";
 
