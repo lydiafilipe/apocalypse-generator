@@ -5,7 +5,7 @@ public class Pandemic extends Apocalypse {
         super(null, null, null, null, null, null, null,
                 null, null);
 
-        String name = "Zombie";
+        String name = "Pandemic";
         PersonType[] suspectTypes = {new PersonType("pathogen"), new PersonType("infected human")};
         PersonFeature[] suspectFeatures = {null, new PersonFeature("manic", PersonFeature.FeatureType.ADJ_PRE),
                 new PersonFeature("moaning", PersonFeature.FeatureType.ADJ_PRE),
