@@ -39,7 +39,7 @@ public class Meteor extends Apocalypse
 
     public Suspect randomSuspect()
     {
-        int suspectTypeIndex = Main.randomInt(0, suspectTypes.length - 1);
+        int suspectTypeIndex = Main.randomInt(0, suspectTypes.length);
         PersonType suspectType = suspectTypes[suspectTypeIndex];
         PersonFeature[] suspectFeatures;
         if (suspectType.equals(suspectTypes[0]))
@@ -61,24 +61,23 @@ public class Meteor extends Apocalypse
     }
     public ActionCommitted randomActionCommitted(PersonType type)
     {
-        int actionCommittedIndex = Main.randomInt(0, actionsCommitted.length - 1);
-        ActionCommitted actionCommitted = actionsCommitted[actionCommittedIndex];
-        return actionCommitted;
+        int actionCommittedIndex = Main.randomInt(0, actionsCommitted.length);
+        return actionsCommitted[actionCommittedIndex];
     }
-    public StateOfVictim randomStateOfVictim(String action)
+    public StateOfVictim randomStateOfVictim(ActionCommitted actionCommitted)
     {
-        int
+        return null;
     }
-    public PoliceRespondTo randomPoliceRespondTo(String action)
+    public PoliceRespondTo randomPoliceRespondTo(ActionCommitted actionCommitted)
     {
-
+        return  null;
     } //ActionCommitted.action
-    public VictimAftermath randomVictimAftermath(ActionCommitted.Injury injury, String state, PoliceRespondTo.Speed speed)
+    public VictimAftermath randomVictimAftermath(ActionCommitted actionCommitted, StateOfVictim stateOfVictim, PoliceRespondTo policeRespondTo)
     {
-
+        return null;
     } //StateOfVictim.state
-    public SuspectAftermath randomSuspectAftermath(String action, PoliceRespondTo.Speed speed)
+    public SuspectAftermath randomSuspectAftermath(ActionCommitted actionCommitted, PoliceRespondTo policeRespondTo)
     {
-
+        return null;
     }//ActionCommitted.action
 }
