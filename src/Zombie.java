@@ -1,5 +1,3 @@
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Zombie extends Apocalypse {
 
     public Zombie() {
@@ -12,7 +10,7 @@ public class Zombie extends Apocalypse {
         PersonFeature[] suspectFeatures = {null, new PersonFeature("gurgling", PersonFeature.FeatureType.ADJ_PRE),
                                             new PersonFeature("moaning", PersonFeature.FeatureType.ADJ_PRE),
                                             new PersonFeature("lying on the sidewalk", PersonFeature.FeatureType.ADJ_SUF),
-                                            new PersonFeature("failing around", PersonFeature.FeatureType.ADJ_SUF)};
+                                            new PersonFeature("flailing around", PersonFeature.FeatureType.ADJ_SUF)};
         ActionCommitted[] actionsCommitted = {new ActionCommitted("bit", ActionCommitted.Injury.SEVERE),
                                                 new ActionCommitted("attacked", ActionCommitted.Injury.SEVERE),
                                                 new ActionCommitted("ate", ActionCommitted.Injury.FATAL)};
