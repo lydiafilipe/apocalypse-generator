@@ -28,9 +28,9 @@ public abstract class Apocalypse {
 
     public abstract Suspect randomSuspect();
     public abstract ActionCommitted randomActionCommitted(PersonType type); //Suspect.type
-    public abstract StateOfVictim randomStateOfVictim(String action); //ActionCommitted.action
-    public abstract PoliceRespondTo randomPoliceRespondTo(String action); //ActionCommitted.action
-    public abstract VictimAftermath randomVictimAftermath(ActionCommitted.Injury injury, String state, PoliceRespondTo.Speed speed); //StateOfVictim.state
-    public abstract SuspectAftermath randomSuspectAftermath(String action, PoliceRespondTo.Speed speed); //ActionCommitted.action
+    public abstract StateOfVictim randomStateOfVictim(ActionCommitted actionCommitted); //ActionCommitted.action
+    public abstract PoliceRespondTo randomPoliceRespondTo(ActionCommitted actionCommitted); //ActionCommitted.action
+    public abstract VictimAftermath randomVictimAftermath(ActionCommitted actionCommitted, StateOfVictim stateOfVictim, PoliceRespondTo policeRespondTo); //StateOfVictim.state
+    public abstract SuspectAftermath randomSuspectAftermath(ActionCommitted actionCommitted, PoliceRespondTo policeRespondTo); //ActionCommitted.action
 
 }

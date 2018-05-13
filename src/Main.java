@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Main {
 
     //available to everywhere
@@ -17,6 +19,11 @@ public class Main {
     {
         PersonFeature[] pfs = {unaffiliated};
         return new Victim(individual, pfs);
+    }
+
+    public static int randomInt(int min, int max)
+    {
+        return ThreadLocalRandom.current().nextInt(min, max);
     }
 
     public static void main(String args[])
