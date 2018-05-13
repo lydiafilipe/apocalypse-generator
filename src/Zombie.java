@@ -59,12 +59,17 @@ public class Zombie extends Apocalypse {
     }
     public PoliceRespondTo randomPoliceRespondTo(ActionCommitted actionCommitted) {
 
-        return null;
+        int respondIndex = Main.randomInt(0, policeRespondTos.length);
+        return new PoliceRespondTo(policeRespondTos[respondIndex], PoliceRespondTo.pickRandomSpeed());
     }
     public VictimAftermath randomVictimAftermath(ActionCommitted actionCommitted, StateOfVictim stateOfVictim, PoliceRespondTo policeRespondTo){
-        return null;
+
+        int afterIndex = Main.randomInt(0, victimAftermaths.length);
+        return victimAftermaths[afterIndex];
     }
     public SuspectAftermath randomSuspectAftermath(ActionCommitted actionCommitted, PoliceRespondTo policeRespondTo) {
-        return null;
+
+        int afterIndex = Main.randomInt(0, suspectAftermaths.length);
+        return suspectAftermaths[afterIndex];
     }
 }
