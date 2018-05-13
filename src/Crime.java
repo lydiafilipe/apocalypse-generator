@@ -19,9 +19,9 @@ public class Crime extends Term {
         suspect = apocalypse.randomSuspect();
         victim = Main.randomVictim();
         actionCommitted = apocalypse.randomActionCommitted(suspect.type);
-        stateOfVictim = apocalypse.randomStateOfVictim(actionCommitted.action);
-        policeRespondTo = apocalypse.randomPoliceRespondTo(actionCommitted.action);
-        victimAftermath = apocalypse.randomVictimAftermath(actionCommitted.injury, stateOfVictim.state, policeRespondTo.speed);
-        suspectAftermath = apocalypse.randomSuspectAftermath(actionCommitted.action, policeRespondTo.speed);
+        stateOfVictim = apocalypse.randomStateOfVictim(actionCommitted);
+        policeRespondTo = apocalypse.randomPoliceRespondTo(actionCommitted);
+        victimAftermath = apocalypse.randomVictimAftermath(actionCommitted, stateOfVictim, policeRespondTo);
+        suspectAftermath = apocalypse.randomSuspectAftermath(actionCommitted, policeRespondTo);
     }
 }
